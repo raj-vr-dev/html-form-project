@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            color: rgb(2, 2, 71);
+           
+background: radial-gradient(circle, rgba(19,239,210,1) 0%, rgba(252,253,29,1) 70%, rgba(252,176,69,1) 81%);
+
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+input:required{
+    border: 2px solid rgb(116, 13, 22);
+}
+form{
+    width: 500px;
+    box-shadow: (25px,50px,45x) black;
+    
+}
+
+fieldset{
+    border-radius: 30px;
+    border: 5px solid black;
+    width: 900px;
+}
+
+input:optional{
+    border:2px dotted blue;
+}
+select{
+    background-color: rgb(236, 136, 171);
+    border-radius: 10px;
+    font-size: 15px;
+    color: rgb(8, 1, 53);
+    cursor: pointer;
+
+}
+input[type="radio"]:checked{
+    height:18px;
+    width:18px;
+}
+input[type="radio"]:checked+label{
+    height:20px;
+    width:20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif 
+}
+
+
+
+input[readonly]{
+    background-color: rgb(169, 212, 13);
+     font-weight: 800;
+
+
+
+
+}
+p{
+    display: none;
+}
+input:hover+p{
+    display:inline;
+    color: blue;
+    background-color: rgb(210, 51, 51);
+    font-weight: 300;
+
+}
+input:focus{
+    background-color: rgb(87, 239, 87);
+    color:rgb(34, 20, 2);
+    font-weight: 600;
+
+}
+img{
+    display:none;
+}
+input[type="Email"]:focus:valid~img.valid{
+    display:inline;
+    height:20px;
+    width:20px;
+}
+input[type="Email"]:focus:Invalid~img.Invalid{
+    display:inline;
+    height:20px;
+    width:20px;
+}
+
+
+input[name="age"]:focus:in-range:valid~img.valid{
+    display:inline;
+    width:20px;
+    height:20px;
+}
+input[name="age"]:focus:out-of-range:Invalid~img.Invalid{
+    display:inline;
+    width:20px;
+    height:20px;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Course Registration Form</h1>
+    <form action="">
+        <fieldset>
+            <legend>Personal Details</legend>
+            <table>
+                <tr>
+                    <td><label for=""> First Name</label></td>
+                    <td>
+                        <input type="text" name="FN" placeholder="Ex:Rahul"
+                        size="15"
+                        maxlength="10"
+                        required/>
+                        <p>Enter Your Name</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="">Surname</label></td>
+                    <td>
+                    <input type="text" name="LN" placeholder="Ex:R" sixe="15" optional>
+                <p>Enter The Surname</p></td>
+                </tr>
+                <tr>
+                    <td><label for="">Mobile Number</label></td>
+                    <td><input type="tel" name="mob" placeholder="Ex: 9875644534" size="15" maxlength="10" required>
+                    <p>Enter Mobile Number</p></td>
+                </tr>
+                <tr>
+                    <td><label for="">Email</label></td>
+                    <td><input type="Email" name="mail" placeholder="raj@gmail.com" size="15" required>
+                        <img src="b.png" class="valid" alt="">
+                        <img src="a.png"  class="Invalid" alt="">
+                    <p>Enter Email</p></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Password</label>
+                        <td><input type="password" name="pwd" placeholder="min 8 characters" min="8" size="15" required>
+                        <p>Atleast provide One UpperCase,One Lowercase, One special Character</p></td>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="">Confirm Password</label></td>
+                   <td><input type="password" name="cpasswd"
+                    placeholder="min 8 characters" min="8 size=15" required>
+                <p>Atleast provide One UpperCase,One Lowercase, One special Character</p></td>
+            </p></td>
+                </tr>
+                <tr>
+                    <td><label for="">DOB</label></td>
+                        <td><input type="date" name="DoB" required><br></td>
+
+                    
+                </tr>
+                <tr>
+                    <td><label for="" >Age</label></td>
+                    <td><input type="number" name="age" min="18" max="100" required>
+                    <img  class="valid" src="b.png" alt="">
+                    <img  class="Invalid" src="a.png" alt=""><br></td>
+                </tr>
+                <tr>
+                    <td><label for="">Gender</label></td>
+                    <td><input type="radio" name="gender" value="M"><label for="">MALE</label>
+                    <input type="radio" name="gender" value="F"><label for="">FEMALE</label>
+                    <input type="radio" name="gender" value="O"><label for="">OTHERS</label></td>
+                </tr>
+                <tr>
+                <td>
+                    Select Country
+                </td>
+                <td>
+                    <select name="Country" id="">
+                    <option class="opt" value="INDIA">INDIA</option>
+                    <option  class="opt" value="USA">USA</option>
+                    <Option class="opt" value="Germany">Germany </Option>
+                    <option  class="opt" value="Japan">Japan</option>
+                    <option class="opt" value="UK">UK</option>
+                    </select>
+                    <br>
+
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <label for="">Upload Picture</label>
+                </td>
+                <td><input type="file" name="pic"> <br></td>
+                </tr>
+                <tr>
+                    <td><input type="reset"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+
+
+        <fieldset>
+            <legend>
+                Course Details
+            </legend>
+            <legend>Select Course</legend>
+           <select name="Course">
+            <option value="PFS">Python Full Stack</option>
+            <option value="JFS">Java Full Stack</option>
+            <option value="CJ">Core Java</option>
+            <option value="PDS"> Python for Data Science</option>
+            <option value="React">React</option>
+           </select>
+           <br>
+           <label for="">Delivery Mode</label>
+           <input type="radio" name="mode" value="ON"><label for="">ONLINE</label>
+           <input type="radio" name="mode" value="OFF"><label for="">OFFLINE</label><br>
+           <label for="">INSTITUTE NAME:</label>
+           <input type="text" value="TAP ACADEMY" readonly><br>
+           <label for="">Comments</label><br>
+           <textarea rows="8" cols="30" ></textarea>
+
+        </fieldset>
+        <input type="Submit" name="" id="">
+    </form>
+    
+</body>
+</html>
